@@ -2,25 +2,56 @@
 
 ## 📌 Project Overview
 
-This project is a MySQL database assignment based on an Employee Management System.
+This project is a MySQL-based Employee Management Database developed as part of a SQL database assignment.
 
-The database is designed to manage employee details, departments, and locations using MySQL.
+The project demonstrates database creation, table management, data manipulation, constraints, and relationships between multiple tables.
+
+## 🎯 Objective
+
+The main objective of this project is to demonstrate the practical implementation of SQL commands and database concepts using MySQL Workbench.
 
 ## 🗄️ Database Structure
 
-The database contains three main tables:
+The database is named:
 
-- **Departments** – Stores department information.
-- **Location** – Stores location details.
-- **Employees** – Stores employee information and their department and location relationships.
+`employee`
 
-## 🛠️ Technologies Used
+It contains the following tables:
 
-- MySQL
-- MySQL Workbench
-- SQL
+### 1. Departments
+Stores department information.
 
-## 🔑 Key SQL Concepts Covered
+- `department_id` – Primary Key
+- `department_name` – Department name
+
+### 2. Location
+Stores employee location information.
+
+- `location_id` – Auto Increment Primary Key
+- `location_name` – Location name
+
+### 3. Employees
+Stores employee details.
+
+- `employee_id` – Primary Key
+- `employee_name` – Employee name
+- `gender` – Gender
+- `age` – Employee age
+- `hire_date` – Date of joining
+- `designation` – Job designation
+- `department_id` – Foreign Key
+- `location_id` – Foreign Key
+
+## 🔗 Table Relationships
+
+The `Employees` table is related to:
+
+- `Departments` through `department_id`
+- `Location` through `location_id`
+
+Foreign Key constraints are used to maintain referential integrity.
+
+## 🔑 SQL Concepts Covered
 
 - CREATE DATABASE
 - CREATE TABLE
@@ -29,36 +60,47 @@ The database contains three main tables:
 - TRUNCATE TABLE
 - DROP TABLE
 - DROP DATABASE
+- INSERT
+- SELECT
 - PRIMARY KEY
 - FOREIGN KEY
 - NOT NULL
 - UNIQUE
-- CHECK constraints
+- CHECK
 - AUTO_INCREMENT
 - DEFAULT values
-- INSERT
-- SELECT
-
-## 🔗 Table Relationships
-
-The `Employees` table is connected to:
-
-- `Departments` using `department_id`
-- `Location` using `location_id`
-
-These relationships are implemented using **Foreign Key constraints**.
 
 ## ✅ Constraints Implemented
 
-The database includes constraints to ensure data integrity:
+The database includes the following constraints:
 
+- Department ID is a Primary Key.
+- Department name cannot be NULL.
+- Department name must be UNIQUE.
+- Location ID is an AUTO_INCREMENT Primary Key.
+- Location name cannot be NULL.
+- Location name must be UNIQUE.
+- Employee ID is a Primary Key.
 - Employee name cannot be NULL.
-- Department name must be unique.
-- Location name must be unique.
-- Gender is restricted to `M` or `F`.
+- Gender accepts only `M` or `F`.
 - Employee age must be 18 or above.
-- Department and location IDs must exist in their respective tables.
-- Hire date automatically uses the current date if not provided.
+- Hire date uses the current date by default.
+- Department ID must exist in the Departments table.
+- Location ID must exist in the Location table.
+
+## 📊 Sample Data
+
+The database contains sample records for:
+
+- Departments: IT, HR, Finance
+- Locations: Kochi, Bangalore, Chennai
+- Employees: Arun, Anu, Rahul
+
+## 🛠️ Technologies Used
+
+- MySQL
+- MySQL Workbench
+- SQL
 
 ## 📂 Project Files
 
